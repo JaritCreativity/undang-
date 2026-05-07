@@ -6,10 +6,9 @@
     <title>Undangan Pernikahan - Fulan & Fulani</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#F5F5DC">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#F5F5DC">
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -39,15 +38,12 @@
             transition: transform 2s cubic-bezier(0.645, 0.045, 0.355, 1);
             position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
-        /* Posisi awal: tersembunyi di luar layar */
         .curtain-left { transform: translateX(-100%); border-right: 2px solid var(--gold); }
         .curtain-right { transform: translateX(100%); border-left: 2px solid var(--gold); }
 
-        /* Animasi menutup */
         .curtain-wrapper.closing .curtain-left { transform: translateX(0); }
         .curtain-wrapper.closing .curtain-right { transform: translateX(0); }
 
-        /* Animasi membuka */
         .curtain-wrapper.opening .curtain-left { transform: translateX(-100%); }
         .curtain-wrapper.opening .curtain-right { transform: translateX(100%); }
 
@@ -123,7 +119,6 @@
             display: none; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; padding: 20px; overflow-y: auto; background: var(--beige);
             background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
-            /* Animasi mewah saat aktif */
             opacity: 0;
             transform: scale(1.1) translateY(20px);
             transition: opacity 1s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
@@ -150,11 +145,13 @@
         .guest-box p { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 5px; opacity: 0.8; }
         #guest-name { font-weight: 700; font-size: 1.2rem; color: var(--gold); border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 5px; }
 
-        .timer-container { display: flex; gap: 8px; margin-bottom: 30px; }
+        .timer-container { display: flex; gap: 8px; margin-bottom: 15px; } /* Diubah margin bottom agar lebih pas */
         .timer-box { background: var(--charcoal); color: var(--gold); width: 60px; height: 75px; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--gold); }
         .timer-box span { font-size: 1.4rem; font-weight: bold; }
         .timer-box label { font-size: 0.6rem; color: var(--white); text-transform: uppercase; }
         
+        .warm-greeting { font-style: italic; font-size: 1rem; line-height: 1.5; margin: 15px auto; color: var(--gold); max-width: 400px; padding: 0 10px; } /* Style untuk ucapan hangat */
+
         .card-outline { background: white; border: 1px solid var(--gold); padding: 5px; margin: 10px 0; width: 100%; max-width: 400px; transform: scale(0.9); opacity: 0; transition: all 1s; }
         .page.active .card-outline { transform: scale(1); opacity: 1; }
         .card-inner { border: 1px solid var(--gold); padding: 20px; position: relative; }
@@ -166,7 +163,7 @@
 
         .gift-box { background: #fff; border: 2px dashed var(--gold); padding: 20px; margin-bottom: 20px; width: 100%; max-width: 450px; }
         .bank-card { background: white; border-left: 5px solid var(--gold); padding: 15px; margin: 10px 0; width: 100%; max-width: 450px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        .bank-logo { height: 25px; max-width: 80px; object-fit: contain; margin: 0 10px; }
+        .bank-logo { height: 40px; width: 120px; object-fit: contain; margin: 0 10px; }
 
         .btn-gold { background: var(--gold); color: white; border: none; padding: 12px 30px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(192, 160, 98, 0.3); font-family: 'Noto Sans JP'; font-weight: bold; }
         .btn-nav { background: var(--gold); color: white; border: none; padding: 10px 20px; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -191,7 +188,6 @@
 </head>
 <body>
 
-    <!-- Curtain Wrapper -->
     <div class="curtain-wrapper" id="curtain">
         <div class="curtain-side curtain-left"></div>
         <div class="curtain-side curtain-right"></div>
@@ -229,7 +225,6 @@
     <div id="audio-ctrl" onclick="toggleAudio()"><i id="audio-icon" class="fas fa-music"></i></div>
     <audio id="bg-music" loop><source src="BAGJA DIRI - DEVI AYU ANEKA TUNGGAL LIVE SLENDRA CIREBON.mp3" type="audio/mpeg"></audio>
 
-    <!-- HALAMAN 1 -->
     <div id="page-1" class="page active">
         <div class="cover-pattern"></div>
         <div class="mempelai-frame animate__animated animate__fadeInDown">
@@ -253,8 +248,7 @@
         </div>
     </div>
 
-    <!-- HALAMAN 2 -->
-    <div<div id="page-2" class="page">
+    <div id="page-2" class="page">
         <h2 class="serif" style="color: var(--gold); margin-bottom: 20px;">Mempelai</h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; max-width: 600px; margin: 0 auto;">
             
@@ -276,19 +270,24 @@
 
         </div>
         <div class="nav-container">
+            <button class="btn-nav" onclick="nextPage(1)"><i class="fas fa-chevron-left"></i> Sebelumnya</button>
             <button class="btn-nav" onclick="nextPage(3)">Selanjutnya <i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
-    <!-- HALAMAN 3 -->
     <div id="page-3" class="page">
-        <h2 class="serif" style="color: var(--gold); font-size: 2rem; margin-bottom: 20px;">Save The Date</h2>
+        <h2 class="serif" style="color: var(--gold); font-size: 2rem; margin-bottom: 15px;">Save The Date</h2>
         <div class="timer-container">
             <div class="timer-box"><span id="days">00</span><label>Hari</label></div>
             <div class="timer-box"><span id="hours">00</span><label>Jam</label></div>
             <div class="timer-box"><span id="minutes">00</span><label>Menit</label></div>
             <div class="timer-box"><span id="seconds">00</span><label>Detik</label></div>
         </div>
+
+        <div class="warm-greeting">
+            "Satu langkah menuju janji suci, sebuah awal dari perjalanan abadi. Kehadiran Anda adalah restu terindah bagi lembaran baru kami."
+        </div>
+
         <div class="card-outline">
             <div class="card-inner">
                 <h3 class="serif">Akad Nikah</h3>
@@ -317,7 +316,6 @@
         </div>
     </div>
 
-    <!-- HALAMAN 4 -->
     <div id="page-4" class="page">
         <h2 class="serif" style="color: var(--gold); margin-bottom: 25px;">Momen Bahagia</h2>
         <div class="gallery-grid">
@@ -334,7 +332,6 @@
         </div>
     </div>
 
-    <!-- HALAMAN 5 -->
     <div id="page-5" class="page">
         <h2 class="serif" style="color: var(--gold); margin-bottom: 10px;">Tanda Kasih</h2>
         <p style="font-size: 0.85rem; max-width: 400px; margin-bottom: 25px;">Bagi tamu yang ingin memberikan Hadiah tanda kasih, dapat melalui:</p>
@@ -343,7 +340,6 @@
             <i class="fas fa-gift" style="color: var(--gold); font-size: 1.5rem;"></i>
             <p style="font-size: 0.8rem; margin: 10px 0;" id="addr">
                 <b>Alamat Pengiriman dibawah ini😉🤗</b><br>
-                
                 Blok Desa Rt.005 Rw.002 Jatisawit Lor - Jatibarang - Indramayu.<br>
                 CP: 0896 6954 6097 (Fulan Putra Menawan)
             </p>
@@ -358,19 +354,19 @@
                 <p id="rek1" style="font-weight: bold; font-size: 1rem;">665556655678884</p>
                 <p style="font-size: 0.7rem;">A/N Fulan Putra Menawan</p>
             </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/CIMB_Niaga_logo.svg" class="bank-logo" style="height: 105px; max-width: 120px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/CIMB_Niaga_logo.svg" class="bank-logo">
             <button onclick="copyText('rek1')" class="btn-gold" style="padding: 7px 14px; font-size: 0.65rem;">Salin</button>
         </div>
 
         <div class="bank-card">
             <div style="text-align: left;">
-            <p style="font-size: 0.7rem; font-weight: bold; color: var(--gold);">BANK BRI</p>
-            <p id="rek2" style="font-weight: bold; font-size: 1rem;">55555678888997</p>
-            <p style="font-size: 0.7rem;">A/N Fulan Putra Menawan</p>
+                <p style="font-size: 0.7rem; font-weight: bold; color: var(--gold);">BANK BRI</p>
+                <p id="rek2" style="font-weight: bold; font-size: 1rem;">55555678888997</p>
+                <p style="font-size: 0.7rem;">A/N Fulan Putra Menawan</p>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/1280px-BANK_BRI_logo.svg.png" class="bank-logo">
+            <button onclick="copyText('rek2')" class="btn-gold" style="padding: 7px 14px; font-size: 0.65rem;">Salin</button>
         </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/1280px-BANK_BRI_logo.svg.png" class="bank-logo" style="height: 40px; max-width: 120px; object-fit: contain;">
-        <button onclick="copyText('rek2', event)" class="btn-gold" style="padding: 7px 14px; font-size: 0.65rem;">Salin</button>
-    </div>
 
         <div class="bank-card">
             <div style="text-align: left;">
@@ -378,7 +374,7 @@
                 <p id="rek3" style="font-weight: bold; font-size: 1rem;">66777889999</p>
                 <p style="font-size: 0.7rem;">A/N Fulani Cantika Putri</p>
             </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/960px-Bank_Syariah_Indonesia.svg.png" class="bank-logo" style="height: 40px; max-width: 120px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/960px-Bank_Syariah_Indonesia.svg.png" class="bank-logo">
             <button onclick="copyText('rek3')" class="btn-gold" style="padding: 7px 14px; font-size: 0.65rem;">Salin</button>
         </div>
 
@@ -388,12 +384,11 @@
         </div>
     </div>
 
-    <!-- HALAMAN 6 -->
     <div id="page-6" class="page">
         <h2 class="serif" style="color: var(--gold); margin-bottom: 10px;">Kehadiran & Doa</h2>
         
         <div class="counter-box">
-            <span id="count-hadir">159</span> Orang akan hadir | <span id="count-tidak">17</span> Orang berhalangan hadir
+            <span id="count-hadir">232</span> Orang akan hadir | <span id="count-tidak">30</span> Orang berhalangan hadir
         </div>
 
         <form id="rsvp-form" style="width: 100%; max-width: 400px;">
@@ -415,78 +410,86 @@
     </div>
 
     <script>
-        let hadirCount = 179;
-        let tidakHadirCount = 17;
+        // TOTAL HADIR: 179 + 53 = 232 | TOTAL TIDAK: 17 + 13 = 30
+        let hadirCount = 232;
+        let tidakHadirCount = 30;
         let hasSubmitted = false;
 
-        const hadirWishes = [
-            "Selamat ya Fulan & Fulani! Semoga sakinah mawadah warahmah selamanya! ✨",
-            "MasyaAllah, lancar sampai hari H ya. InsyaAllah hadir bareng keluarga!",
-            "Ciee yang udah halal! Semoga menjadi keluarga yang berkah ya bro!",
-            "Happy Wedding! Semoga cinta kalian abadi seperti angka delapan.",
-            "Alhamdulillah, ikut seneng denger kabarnya. Otw nyiapin baju kondangan!",
-            "Barakallahulakuma... Doa terbaik buat kalian berdua dari kami sekeluarga.",
-            "Mantap jiwa! Akhirnya pelabuhan terakhir ketemu juga. Samawa ya!",
-            "Selamat menempuh hidup baru! Jangan lupa bahagia terus setiap hari.",
-            "Congrats bestie! Cantik banget pasti nanti pas resepsi. See you!",
-            "Selamat ya mas Fulan! Semoga menjadi imam yang amanah buat mbak Fulani.",
-            "Semoga Allah memberkahi pernikahan kalian dengan keturunan yang sholeh.",
-            "Ikut bahagia! Insya Allah raga ini hadir menyaksikan janji suci kalian.",
-            "Wih, pecah telor juga akhirnya! Selamat ibadah terlama ya kalian.",
-            "Selamat ya neng! Semoga rumah tangganya selalu penuh tawa dan cinta.",
-            "Happy for you! Moga lancar akad dan resepsinya tanpa kendala apapun.",
-            "Masya Allah pasangan serasi! Semoga cepat dapat momongan lucu ya.",
-            "Sing lancar jaya mpe hari H lur! Siapkan hidangan terbaiknya hehe.",
-            "Selamat ya! Semoga setiap langkah kalian selalu diridhoi Allah SWT.",
-            "Waaah selamat ya neng cantik! Akhirnya dapet pangeran yang tepat.",
-            "Happy wedding day! May your journey be filled with laughter and love.",
-            "Semoga sakinah mawadah warahmah. Maaf kalo makannya banyak nanti!",
-            "Lancar-lancar ya neng. Sing dadi istri yang sholehah buat mas Fulan.",
-            "Selamat menempuh hidup baru! Jaga komunikasi dan saling sabar ya.",
-            "Akhirnya ya... Setelah drama panjang akhirnya sah juga! Happy for you!",
-            "Selamat bro! Jangan lupa olahraga biar fit pas hari H nanti ✌️",
-            "Barakallah! Semoga pernikahan ini menjadi pintu surga buat kalian.",
-            "Selamat ya neng Fulani. Akhirnya nemu pelabuhan terakhir yang pas.",
-            "Happy Wedding! Moga nular ke temen-temen tongkrongan yang jomblo.",
-            "Congrats ya! Semoga langgeng terus sampai maut memisahkan.",
-            "Selamat ya mas! Jaga baik-baik permata hatinya ini. Sakinah selalu!",
-            "Insya Allah hadir! Udah beli baju baru khusus buat kondangan kalian.",
-            "Selamat menempuh bahtera rumah tangga. Semoga ombaknya selalu tenang.",
-            "Happy Wedding! May your love grow stronger every single day!",
-            "Selamat ya! Ikut seneng banget ngeliat kalian akhirnya bersatu.",
-            "Semoga menjadi keluarga yang harmonis dan inspirasi buat banyak orang.",
-            "Congrats! Siap mengosongkan perut buat nyobain semua menu nanti!",
-            "Selamat ya mas bro! Lancar sampai hari H dan setelahnya juga.",
-            "Masya Allah, kabar bahagia di tahun ini. Sampai ketemu di lokasi!",
-            "Selamat menempuh babak baru kehidupan. Bahagia selalu ya kalian!",
-            "Selamat ya! Semoga rumah tangga kalian selalu dijauhkan dari badai."
+        const wishData = [
+            { name: "Dimas Nugraha", status: "Hadir", wish: "Selamat ya Fulan & Fulani! Semoga sakinah mawadah warahmah selamanya!", class: "bg-hadir" },
+            { name: "Siti Aisyah", status: "Hadir", wish: "MasyaAllah, lancar sampai hari H ya. InsyaAllah hadir! 🌸", class: "bg-hadir" },
+            { name: "Budi Santoso", status: "Hadir", wish: "Ciee yang udah halal! Semoga menjadi keluarga yang berkah! ✨", class: "bg-hadir" },
+            { name: "Larasati", status: "Hadir", wish: "Happy Wedding! Semoga cinta kalian abadi. 💖", class: "bg-hadir" },
+            { name: "Asep Sunandar", status: "Hadir", wish: "Wilujeng ngambah rumah tangga anyar, mugia sareundeuk saigel sabobot sapihanean. Sakinah salawasna! 🥂", class: "bg-hadir" },
+            { name: "Dewi Lestari", status: "Tidak Hadir", wish: "Afwan akhi, raga tak sampai tapi doa mengangkasa. Samawa ya!", class: "bg-tidak" },
+            { name: "Rizky Ramadhan", status: "Hadir", wish: "Mantap pak bro! Akhirnya nyusul juga. Siap meluncur ke lokasi! 🚀", class: "bg-hadir" },
+            { name: "Hendra Wijaya", status: "Hadir", wish: "Mugi-mugi dadi keluarga sing rukun lan mulyo. Selamat yo!", class: "bg-hadir" },
+            { name: "Sari Indah", status: "Tidak Hadir", wish: "Punten pisan, pas hari H lagi ada tugas ke luar kota. Titip doa ya!", class: "bg-tidak" },
+            { name: "Guntur Pratama", status: "Hadir", wish: "Siapkan rendang yang banyak ya, saya datang dengan perut kosong! Haha selamat!", class: "bg-hadir" },
+            { name: "Maya Kartika", status: "Hadir", wish: "Alhamdulillah ikut seneng dengernya. Semoga bahagia dunia akhirat ya de. 🥰", class: "bg-hadir" },
+            { name: "Doni Setiawan", status: "Tidak Hadir", wish: "Maaf banget belum bisa hadir karena jadwal bentrok. Sukses acaranya!", class: "bg-tidak" },
+            { name: "Rina Rahmawati", status: "Hadir", wish: "Selamat menempuh hidup baru! Jangan lupa bahagia terus ya kalian berdua. ✨", class: "bg-hadir" },
+            { name: "Eko Prasetyo", status: "Hadir", wish: "Selamat ya Fulan. Semoga cepet dapet momongan biar makin rame!", class: "bg-hadir" },
+            { name: "Indah Permata", status: "Hadir", wish: "Cantik banget pasti Fulani nanti. Selamat ya, sampai ketemu di gedung!", class: "bg-hadir" },
+            { name: "Joko Susilo", status: "Tidak Hadir", wish: "Matur nuwun undangane, tapi kulo nembe wonten keperluan mendesak. Selamat nggih!", class: "bg-tidak" },
+            { name: "Bambang Perkasa", status: "Hadir", wish: "Jos gandos! Semoga langgeng terus sampai kakek nenek.", class: "bg-hadir" },
+            { name: "Ani Wijaya", status: "Hadir", wish: "Selamat ya sayang, doa terbaik buat kalian berdua. Peluk jauh! 🤗", class: "bg-hadir" },
+            { name: "Taufik Hidayat", status: "Hadir", wish: "Hatur nuhun undanganna. Insya Allah dongkap sareng kulawarga. Semangat!", class: "bg-hadir" },
+            { name: "Deni Sumargo", status: "Hadir", wish: "Selamat bro! Akhirnya pelabuhan terakhir ketemu juga. Mantap!", class: "bg-hadir" },
+            { name: "Siska Amelia", status: "Hadir", wish: "Semoga jalinan cintanya makin kuat tiap hari. Happy wedding! 💍", class: "bg-hadir" },
+            { name: "Andi Hermawan", status: "Tidak Hadir", wish: "Waduh maaf sekali lagi ada musibah kecil, jadi gak bisa hadir. Doa saya menyertai.", class: "bg-tidak" },
+            { name: "Mega Utami", status: "Hadir", wish: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khoir. 🤲", class: "bg-hadir" },
+            { name: "Rudi Tabuti", status: "Hadir", wish: "Awas jangan begadang terus ntar abis nikah ya! Haha selamat bro!", class: "bg-hadir" },
+            { name: "Lilis Karlina", status: "Hadir", wish: "Wilujeng nya neng cantik, mugia janten kulawarga anu barokah. Amin. ❤️", class: "bg-hadir" },
+            { name: "Agung Pribadi", status: "Hadir", wish: "Semoga menjadi awal perjalanan yang indah. Selamat menempuh hidup baru!", class: "bg-hadir" },
+            { name: "Fitri Handayani", status: "Hadir", wish: "Happy for you both! Akhirnya setelah sekian lama ya... 😍", class: "bg-hadir" },
+            { name: "Yanto Racing", status: "Tidak Hadir", wish: "Maaf lur, motor lagi turun mesin gak bisa gas ke sana. Selamat ya!", class: "bg-tidak" },
+            { name: "Nunu Nugraha", status: "Hadir", wish: "Insya Allah hadir mang! Siapkan panggung hiburannya yang mantap!", class: "bg-hadir" },
+            { name: "Dina Mariana", status: "Hadir", wish: "Selamat menempuh lembaran baru. Semoga penuh cinta dan kebahagiaan.", class: "bg-hadir" },
+            { name: "Herman Suherman", status: "Hadir", wish: "Selamat ya bosku, semoga lancar jaya acaranya tanpa hambatan apapun.", class: "bg-hadir" },
+            { name: "Ratih Purwasih", status: "Tidak Hadir", wish: "Mohon maaf tidak bisa hadir, sukses buat acaranya ya cantik.", class: "bg-tidak" },
+            { name: "Zaki Mubarok", status: "Hadir", wish: "Selamat ya Fulan. Semoga istiqomah dalam membangun rumah tangga.", class: "bg-hadir" },
+            { name: "Ujang Galon", status: "Hadir", wish: "Mantap pisan! Moga cepet dapet dede bayi ya mang. Hajar terus! 😂", class: "bg-hadir" },
+            { name: "Sari Hartati", status: "Hadir", wish: "Terharu liat kalian akhirnya nikah. Selamat ya, langgeng terus!", class: "bg-hadir" },
+            { name: "Pepen Effendi", status: "Hadir", wish: "Hadir mang! Rek menta oleh-oleh ti Islamabad nya hhehe.", class: "bg-hadir" },
+            { name: "Kiki Rizki", status: "Hadir", wish: "Barakallah. Semoga sakinah terus sampai maut memisahkan. Amin.", class: "bg-hadir" },
+            { name: "Maman Suherman", status: "Tidak Hadir", wish: "Aduh hampura pisan, nuju aya damelan di luar kota. Selamat nya!", class: "bg-tidak" },
+            { name: "Siti Badriah", status: "Hadir", wish: "Selamat ya neng, semoga suaminya sabar ngadepin kamu hehe. Kidding!", class: "bg-hadir" },
+            { name: "Yusuf Mansur", status: "Hadir", wish: "Semoga berkah segalanya, rezekinya lancar setelah menikah. Amin.", class: "bg-hadir" },
+            { name: "Wawan Setiawan", status: "Hadir", wish: "Siapp hadir! Omat nya rendangna tong nepi beak ku saya haha.", class: "bg-hadir" },
+            { name: "Ratna Sari", status: "Hadir", wish: "Selamat ya, semoga rumah tangganya adem ayem terus kayak ubin masjid.", class: "bg-hadir" },
+            { name: "Bambang Pamungkas", status: "Hadir", wish: "Semangat menempuh hidup baru! Tetap tenang dan kuasai keadaan.", class: "bg-hadir" },
+            { name: "Euis Komariah", status: "Tidak Hadir", wish: "Hampura neng, abdi nuju kirang sehat. Doa ti tebih wae nya.", class: "bg-tidak" },
+            { name: "Dede Yusuf", status: "Hadir", wish: "Wilujeng! Mugia janten pasangan anu silih asah, silih asih, silih asuh.", class: "bg-hadir" },
+            { name: "Irwan Saputra", status: "Hadir", wish: "Lancar terus sampai hari H ya kawan. Siap meramaikan!", class: "bg-hadir" },
+            { name: "Linda Wahyuni", status: "Hadir", wish: "Selamat ya jeng, moga cepet nyusul punya momongan lucu-lucu.", class: "bg-hadir" },
+            { name: "Toto Hartoto", status: "Tidak Hadir", wish: "Maaf absen dulu, lagi jaga warung gak ada yang gantiin. Selamat!", class: "bg-tidak" },
+            { name: "Nana Mulyana", status: "Hadir", wish: "Hadir dong! Gak sabar liat pengantinnya yang rupawan ini.", class: "bg-hadir" },
+            { name: "Yayat Ruhiyat", status: "Hadir", wish: "Alhamdulillah, mugia runtut raut sauyunan salawasna. Amin YRA.", class: "bg-hadir" },
+            { name: "Cucu Cahyati", status: "Hadir", wish: "Selamat neng geulis! Moga dapet imam yang sholeh selamanya.", class: "bg-hadir" },
+            { name: "Dodi Mulyadi", status: "Hadir", wish: "Mantap! Semoga berkah dan langgeng terus ya bro.", class: "bg-hadir" },
+            { name: "Titiek Puspa", status: "Hadir", wish: "Selamat ya cu, moga bahagia terus lahir dan batin. Muach!", class: "bg-hadir" },
+            { name: "Gogon Srimulat", status: "Tidak Hadir", wish: "Maaf gak bisa dateng, lagi sibuk ngelawak di tempat lain. Piss!", class: "bg-tidak" },
+            { name: "Wandi Suwandi", status: "Hadir", wish: "Gaskeun mang! Semoga malam pertamanya gak grogi haha.", class: "bg-hadir" },
+            { name: "Siti Maesaroh", status: "Hadir", wish: "Masya Allah tabarakallah, ikut seneng liatnya. Selamat ya!", class: "bg-hadir" },
+            { name: "Dadang Konelo", status: "Hadir", wish: "Hadir mang! Rek menta soto ah engke pas di ditu. Sip!", class: "bg-hadir" },
+            { name: "Neng Elis", status: "Hadir", wish: "Selamat nya neng, sing langgeng dugi ka paketrok iteuk. 🥰", class: "bg-hadir" },
+            { name: "Umar Bakri", status: "Tidak Hadir", wish: "Maaf nak, bapak lagi ada rapat guru. Doa bapak selalu ada.", class: "bg-tidak" },
+            { name: "Iwan Fals", status: "Hadir", wish: "Selamat menempuh hidup baru di bawah matahari yang sama. Damai!", class: "bg-hadir" },
+            { name: "Mpok Siti", status: "Hadir", wish: "Buset dah cakep amat pengantinnya! Selamat ya tong, moga awet!", class: "bg-hadir" },
+            { name: "Jajang Nurjaman", status: "Hadir", wish: "Lancar jaya acarana mang. Insya Allah dongkap abdi mah.", class: "bg-hadir" },
+            { name: "Butet Kartaredjasa", status: "Tidak Hadir", wish: "Maaf ya lur, lagi ada pameran seni di Jogja. Sukses acaranya!", class: "bg-tidak" },
+            { name: "Soleh Solihun", status: "Hadir", wish: "Selamat nikah! Jangan lupa dokumentasi yang bagus biar gak nyesel.", class: "bg-hadir" },
+            { name: "Kang Mus", status: "Hadir", wish: "Siap hadir pengamanan lokasi! Haha selamat ya bro.", class: "bg-hadir" },
+            { name: "Cecep Preman", status: "Hadir", wish: "Selamat menempuh hidup baru. Sing rukun terus nya mang.", class: "bg-hadir" }
         ];
-
-        const tidakHadirWishes = [
-            "Afwan akhi, raga tak sampai tapi doa mengangkasa. Samawa ya! 🙏",
-            "Punten pisan, pas hari H lagi ada tugas ke luar kota. Titip doa ya!",
-            "Sedih banget gak bisa hadir, berbarengan sama acara Syukuran Saudara 😭.",
-            "Mugo-mugo acarane lancar mas, aku isih nang rantau durung iso balik.",
-            "Hampura lur, raga lagi kurang fit. Doa terbaik buat Fulan & Fulani!",
-            "Selamat ya! Maaf kado nyusul via paket, orangnya gak bisa hadir hiks.",
-            "Ya Allah maaf banget belum bisa hadir, titip salam buat mempelai ya.",
-            "Waduh bentrok sama kondangan sodara kandung mas. Sukses ya acaranya!",
-            "Selamat menempuh hidup baru! Maaf raga ini tertahan di pekerjaan 💼",
-            "Insha Allah doa saya sampai ke sana. Semoga kalian bahagia selamanya!",
-            "Punten pisan neng, abdi nuju di luar pulau. Mugi sakinah mawadah.",
-            "Maaf mas bro, jadwal shift kerja gak bisa dituker. Lancar ya akadnya!",
-            "Hiks, pengen banget dateng tapi jarak memisahkan. Samawa ya!"
-        ];
-
-        const randomNames = ["Dimas Nugraha", "Siti Aisyah", "Budi Santoso", "Larasati", "Asep Sunandar", "Dewi Lestari", "Rizky Ramadhan", "Putri Utami", "Eko Prasetyo", "Indah Permata", "Joko Susilo", "Ani Wijaya", "Bambang Perkasa", "Sari Indah", "Guntur Pratama", "Maya Kartika", "Doni Setiawan", "Rina Rahmawati", "Agus Hermawan", "Nani Suryani", "Hendra Saputra", "Fitri Handayani", "Dedi Kurniawan", "Siska Amelia", "Andi Wijaya", "Yanti Susanti", "Irfan Hakim", "Firly Cantiks" , "Desi Ratnasari", "Taufik Hidayat", "Linda Sari", "Wawan Setiawan", "Santi Maharani", "Rully Irawan", "Kiki Fatmala", "Yanto Wijaya", "Lia Marlina", "Adit Nugroho", "Nur Hasanah", "Feri Irawan", "Ika Pertiwi", "Tono Sudibyo", "Adi Saputra", "Nina Marliana", "Rian Hidayat", "Lina Marlina", "Yogi Pratama", "Nita Permata", "Sony Setiawan", "Vina Panduwinata"];
 
         function loadInitialWishes() {
             const wall = document.getElementById('wish-wall');
-            let combined = [];
-            hadirWishes.forEach((w, i) => combined.push({ name: randomNames[i % randomNames.length], status: "Hadir", wish: w, class: "bg-hadir" }));
-            tidakHadirWishes.forEach((w, i) => combined.push({ name: randomNames[(i+30) % randomNames.length], status: "Tidak Hadir", wish: w, class: "bg-tidak" }));
-            combined.sort(() => Math.random() - 0.5);
-            combined.forEach(item => {
+            wall.innerHTML = "";
+            const shuffled = [...wishData].sort(() => Math.random() - 0.5);
+            
+            shuffled.forEach(item => {
                 const div = document.createElement('div');
                 div.className = 'wish-item';
                 div.innerHTML = `<p class="wish-name">${item.name} <span class="status-badge ${item.class}">${item.status}</span></p>
@@ -512,11 +515,10 @@
             document.getElementById('toast-message').innerText = message;
             toast.style.display = 'flex';
             toast.classList.add('animate__fadeInUp');
-            setTimeout(() => { toast.classList.replace('animate__fadeInUp', 'animate__fadeOutDown'); }, 3000);
-        }
-
-        function showCustomModal() {
-            document.getElementById('custom-modal').style.display = 'flex';
+            setTimeout(() => { 
+                toast.classList.replace('animate__fadeInUp', 'animate__fadeOutDown');
+                setTimeout(() => { toast.style.display = 'none'; toast.classList.remove('animate__fadeOutDown'); }, 500);
+            }, 3000);
         }
 
         function hideModal() { document.getElementById('custom-modal').style.display = 'none'; }
@@ -525,111 +527,58 @@
             const val = document.getElementById('input-name').value;
             if (val.trim() !== "") {
                 const curtain = document.getElementById('curtain');
-                
-                // 1. Set nama
                 document.getElementById('guest-name').innerText = val;
                 document.getElementById('rsvp-name').value = val;
-
-                // 2. Animasi tirai menutup layar
                 curtain.classList.add('closing');
-
                 setTimeout(() => {
-                    // 3. Sembunyikan input nama di balik tirai
                     document.getElementById('welcome-overlay').style.display = 'none';
                     loadInitialWishes();
-                    
-                    // 4. Pastikan cover aktif
                     nextPage(1);
-
-                    // 5. Buka tirai secara mewah
                     curtain.classList.remove('closing');
                     curtain.classList.add('opening');
-                    
-                    // Hapus dari DOM setelah selesai agar tidak mengganggu klik
-                    setTimeout(() => {
-                        curtain.style.display = 'none';
-                    }, 2100);
-                }, 1800); // Waktu tirai menutup sempurna
+                    setTimeout(() => { curtain.style.display = 'none'; }, 2100);
+                }, 1800);
             } else {
                 showToast("Masukkan nama Anda");
             }
         }
 
-        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            if(hasSubmitted) return;
-            const status = document.getElementById('rsvp-status').value;
-            if(status === 'Hadir') {
-                hadirCount++;
-                document.getElementById('count-hadir').innerText = hadirCount;
-            } else {
-                tidakHadirCount++;
-                document.getElementById('count-tidak').innerText = tidakHadirCount;
-            }
-            const wall = document.getElementById('wish-wall');
-            const item = document.createElement('div');
-            item.className = 'wish-item animate__animated animate__fadeIn';
-            item.innerHTML = `<p class="wish-name">${document.getElementById('rsvp-name').value} <span class="status-badge ${status === 'Hadir' ? 'bg-hadir' : 'bg-tidak'}">${status}</span></p>
-                             <p style="font-size: 0.8rem; font-style: italic;">${document.getElementById('rsvp-wish').value}</p>`;
-            wall.prepend(item);
-            hasSubmitted = true;
-            document.getElementById('submit-btn').disabled = true;
-            document.getElementById('submit-btn').style.opacity = "0.5";
-            showCustomModal();
-        });
-
-        function startInvitation() {
-    // Meminta browser masuk ke mode Full Screen
-    const docElm = document.documentElement;
-    if (docElm.requestFullscreen) {
-        docElm.requestFullscreen();
-    } else if (docElm.mozRequestFullScreen) { /* Firefox */
-        docElm.mozRequestFullScreen();
-    } else if (docElm.webkitRequestFullScreen) { /* Chrome, Safari & Opera */
-        docElm.webkitRequestFullScreen();
-    } else if (docElm.msRequestFullscreen) { /* IE/Edge */
-        docElm.msRequestFullscreen();
-    }
-
-    // Menjalankan fungsi musik dan pindah halaman yang sudah ada
-    document.getElementById('bg-music').play();
-    document.getElementById('audio-ctrl').style.display = 'flex';
-    nextPage(2);
-            
-        }
-
-        // --- SISTEM TRANSISI MEWAH ---
         function nextPage(n) {
             const pages = document.querySelectorAll('.page');
             const currentPage = document.querySelector('.page.active');
             const targetPage = document.getElementById('page-' + n);
 
             if (currentPage) {
-                // Efek keluar: Mengecil dan menghilang halus
                 currentPage.style.opacity = '0';
                 currentPage.style.transform = 'scale(0.9) translateY(-20px)';
-                
                 setTimeout(() => {
                     currentPage.classList.remove('active');
+                    currentPage.style.display = 'none';
                     
-                    // Aktifkan halaman target
-                    targetPage.classList.add('active');
-                    
-                    // Beri jeda kecil untuk memulai animasi masuk
+                    targetPage.style.display = 'flex';
                     setTimeout(() => {
+                        targetPage.classList.add('active');
                         targetPage.style.opacity = '1';
                         targetPage.style.transform = 'scale(1) translateY(0)';
                     }, 50);
-                }, 600); // Jeda transisi keluar
+                }, 600);
             } else {
-                // Jika tidak ada halaman aktif (initial load)
+                targetPage.style.display = 'flex';
                 targetPage.classList.add('active');
-                setTimeout(() => {
-                    targetPage.style.opacity = '1';
-                    targetPage.style.transform = 'scale(1) translateY(0)';
-                }, 50);
+                targetPage.style.opacity = '1';
+                targetPage.style.transform = 'scale(1) translateY(0)';
             }
             window.scrollTo(0,0);
+        }
+
+        function startInvitation() {
+            const docElm = document.documentElement;
+            if (docElm.requestFullscreen) docElm.requestFullscreen();
+            else if (docElm.webkitRequestFullScreen) docElm.webkitRequestFullScreen();
+            
+            document.getElementById('bg-music').play();
+            document.getElementById('audio-ctrl').style.display = 'flex';
+            nextPage(2);
         }
 
         let isPlaying = true;
@@ -640,8 +589,9 @@
             isPlaying = !isPlaying;
         }
 
-        function createSakura() {
+        setInterval(() => {
             const c = document.getElementById('sakura-container');
+            if(!c) return;
             const p = document.createElement('div');
             p.className = 'sakura';
             p.style.width = p.style.height = Math.random() * 10 + 10 + 'px';
@@ -649,22 +599,41 @@
             p.style.animationDuration = Math.random() * 3 + 4 + 's';
             c.appendChild(p);
             setTimeout(() => p.remove(), 7000);
-        }
-        setInterval(createSakura, 400);
+        }, 400);
 
         const weddingDate = new Date("May 31, 2026 09:00:00").getTime();
         setInterval(() => {
-            const now = new Date().getTime();
-            const diff = weddingDate - now;
-            document.getElementById('days').innerText = Math.max(0, Math.floor(diff / 86400000));
-            document.getElementById('hours').innerText = Math.max(0, Math.floor((diff % 86400000) / 3600000));
-            document.getElementById('minutes').innerText = Math.max(0, Math.floor((diff % 3600000) / 60000));
-            document.getElementById('seconds').innerText = Math.max(0, Math.floor((diff % 60000) / 1000));
+            const diff = weddingDate - new Date().getTime();
+            const d = document.getElementById('days');
+            if(d) {
+                document.getElementById('days').innerText = Math.max(0, Math.floor(diff / 86400000));
+                document.getElementById('hours').innerText = Math.max(0, Math.floor((diff % 86400000) / 3600000));
+                document.getElementById('minutes').innerText = Math.max(0, Math.floor((diff % 3600000) / 60000));
+                document.getElementById('seconds').innerText = Math.max(0, Math.floor((diff % 60000) / 1000));
+            }
         }, 1000);
 
         function copyText(id) {
             navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => showToast("Berhasil disalin!"));
         }
+
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if(hasSubmitted) return;
+            const status = document.getElementById('rsvp-status').value;
+            status === 'Hadir' ? hadirCount++ : tidakHadirCount++;
+            document.getElementById('count-hadir').innerText = hadirCount;
+            document.getElementById('count-tidak').innerText = tidakHadirCount;
+            
+            const item = document.createElement('div');
+            item.className = 'wish-item animate__animated animate__fadeIn';
+            item.innerHTML = `<p class="wish-name">${document.getElementById('rsvp-name').value} <span class="status-badge ${status === 'Hadir' ? 'bg-hadir' : 'bg-tidak'}">${status}</span></p>
+                             <p style="font-size: 0.8rem; font-style: italic;">${document.getElementById('rsvp-wish').value}</p>`;
+            document.getElementById('wish-wall').prepend(item);
+            hasSubmitted = true;
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('custom-modal').style.display = 'flex';
+        });
     </script>
 </body>
 </html>
