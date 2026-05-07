@@ -156,36 +156,57 @@
         .page.active .card-outline { transform: scale(1); opacity: 1; }
         .card-inner { border: 1px solid var(--gold); padding: 20px; position: relative; }
 
-        /* --- UPDATE HALAMAN 4: GALLERY LUXURY OPTIMIZED --- */
-        #page-4 .gallery-container {
-            position: relative; width: 100%; height: 100%; 
-            display: flex; flex-direction: column; align-items: center; justify-content: flex-start; /* Ubah ke flex-start */
-            padding: 20px 25px; /* Kurangi padding atas */
+        /* --- UPDATE HALAMAN 4: AUTO SLIDESHOW GALLERY --- */
+        #page-4 { position: relative; overflow: hidden; padding-top: 40px !important; }
+        
+        .gallery-bg-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+            padding: 10px; opacity: 0.25; filter: blur(5px); z-index: 1;
         }
-        #page-4 .full-page-border {
-            position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px;
-            border: 1px solid var(--gold); pointer-events: none; z-index: 10;
+        .bg-img { width: 100%; height: 100%; object-fit: cover; border: 1px solid var(--gold); }
+
+        .gallery-content { 
+            position: relative; z-index: 10; width: 100%; height: 100%; 
+            display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
         }
-        #page-4 .gallery-grid { 
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; 
-            max-width: 100%; width: 100%; margin: 10px 0;
-            position: relative; z-index: 5;
+
+        .slideshow-wrapper {
+            position: relative; width: 90%; height: 450px; 
+            margin: 20px 0; display: flex; align-items: center; justify-content: center;
         }
-        #page-4 .gallery-frame { 
-            padding: 5px; background: white; border: 1px solid var(--gold); 
-            box-shadow: 4px 4px 12px rgba(0,0,0,0.1); transition: all 0.4s ease;
+
+        .slide-frame {
+            position: absolute; width: 85%; height: 100%;
+            background: white; padding: 10px; border: 1px solid var(--gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            opacity: 0; visibility: hidden;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0.8) translateY(30px);
         }
-        #page-4 .gallery-img { 
-            width: 100%; 
-            height: 180px; /* Tambah tinggi foto */
-            object-fit: cover; 
-            display: block; 
+
+        .slide-frame.active {
+            opacity: 1; visibility: visible;
+            transform: scale(1) translateY(0);
+            z-index: 20;
         }
-        #page-4 .gallery-quote {
-            font-family: 'Noto Serif JP', serif; font-style: italic; font-size: 0.85rem;
-            color: var(--gold); margin-top: 10px; max-width: 300px; line-height: 1.5;
-            position: relative; z-index: 5;
+
+        .slide-frame.next {
+            opacity: 0.5; visibility: visible;
+            transform: scale(0.85) translateX(40px) rotate(5deg);
+            z-index: 15;
         }
+
+        .slide-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .gallery-quote {
+            font-family: 'Noto Serif JP', serif; font-style: italic; font-size: 0.9rem;
+            color: var(--charcoal); margin: 15px 30px; line-height: 1.6;
+            background: rgba(245, 245, 220, 0.8); padding: 15px; border-left: 3px solid var(--gold);
+        }
+
+        /* Navigation Buttons Page 4 specific */
+        #page-4 .nav-container { bottom: 30px; }
 
         .gift-box { background: #fff; border: 2px dashed var(--gold); padding: 20px; margin-bottom: 20px; width: 100%; max-width: 450px; }
         .bank-card { background: white; border-left: 5px solid var(--gold); padding: 15px; margin: 10px 0; width: 100%; max-width: 450px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
@@ -212,9 +233,8 @@
         @media (max-width: 600px) { 
             .page { padding-bottom: 180px; } 
             .wedding-title h1 { font-size: 2.2rem; } 
-            #page-4 .gallery-img { height: 165px; } /* Tinggi optimal untuk mobile */
+            .slideshow-wrapper { height: 380px; }
             .modal-box { width: 90%; } 
-            #page-4 .gallery-container { padding-top: 35px; }
         }
     </style>
 </head>
@@ -347,30 +367,30 @@
         </div>
     </div>
 
-    <div id="page-4" class="page" style="padding: 0;">
-        <div class="full-page-border">
-            <i class="fas fa-spa corner-sakura" style="top: 10px; left: 10px; position: absolute; color: var(--gold); opacity: 0.6;"></i>
-            <i class="fas fa-spa corner-sakura" style="top: 10px; right: 10px; position: absolute; color: var(--gold); opacity: 0.6; transform: rotate(90deg);"></i>
-            <i class="fas fa-spa corner-sakura" style="bottom: 10px; left: 10px; position: absolute; color: var(--gold); opacity: 0.6; transform: rotate(-90deg);"></i>
-            <i class="fas fa-spa corner-sakura" style="bottom: 10px; right: 10px; position: absolute; color: var(--gold); opacity: 0.6; transform: rotate(180deg);"></i>
+    <div id="page-4" class="page">
+        <div class="gallery-bg-container">
+            <img src="IMG-20250926-WA0011.jpg" class="bg-img">
+            <img src="IMG-20251004-WA0249.jpg" class="bg-img">
+            <img src="IMG-20251004-WA0198.jpg" class="bg-img">
+            <img src="IMG-20250915-WA0076.jpg" class="bg-img">
         </div>
-        
-        <div class="gallery-container">
-            <h2 class="serif" style="color: var(--gold); margin-bottom: 5px; z-index: 5; margin-top: 15px;">Momen Bahagia</h2>
-            <div style="width: 50px; height: 2px; background: var(--gold); margin-bottom: 10px; z-index: 5;"></div>
 
-            <div class="gallery-grid">
-                <div class="gallery-frame animate__animated animate__zoomIn"><img src="IMG-20250926-WA0011.jpg" class="gallery-img"></div>
-                <div class="gallery-frame animate__animated animate__zoomIn" style="animation-delay: 0.2s;"><img src="IMG-20251004-WA0249.jpg" class="gallery-img"></div>
-                <div class="gallery-frame animate__animated animate__zoomIn" style="animation-delay: 0.4s;"><img src="IMG-20251004-WA0198.jpg" class="gallery-img"></div>
-                <div class="gallery-frame animate__animated animate__zoomIn" style="animation-delay: 0.6s;"><img src="IMG-20250915-WA0076.jpg" class="gallery-img"></div>
-                <div class="gallery-frame animate__animated animate__zoomIn" style="animation-delay: 0.8s;"><img src="IMG-20250914-WA0102.jpg" class="gallery-img"></div>
-                <div class="gallery-frame animate__animated animate__zoomIn" style="animation-delay: 1s;"><img src="IMG-20250912-WA0170.jpg" class="gallery-img"></div>
+        <div class="gallery-content">
+            <h2 class="serif" style="color: var(--gold); margin-top: 10px;">Momen Bahagia</h2>
+            <p style="font-size: 0.8rem; letter-spacing: 2px;">GALERI PRE-WEDDING</p>
+
+            <div class="slideshow-wrapper">
+                <div class="slide-frame active"><img src="IMG-20250926-WA0011.jpg" class="slide-img"></div>
+                <div class="slide-frame next"><img src="IMG-20251004-WA0249.jpg" class="slide-img"></div>
+                <div class="slide-frame"><img src="IMG-20251004-WA0198.jpg" class="slide-img"></div>
+                <div class="slide-frame"><img src="IMG-20250915-WA0076.jpg" class="slide-img"></div>
+                <div class="slide-frame"><img src="IMG-20250914-WA0102.jpg" class="slide-img"></div>
+                <div class="slide-frame"><img src="IMG-20250912-WA0170.jpg" class="slide-img"></div>
             </div>
 
-            <p class="gallery-quote animate__animated animate__fadeInUp" style="animation-delay: 1.2s;">
-                "Cinta tidak terlihat dengan mata, tetapi dengan hati. Dan setiap momen bersamamu adalah anugerah terindah."
-            </p>
+            <div class="gallery-quote">
+                "Cinta adalah ketika kebahagiaan orang lain lebih penting daripada kebahagiaanmu sendiri."
+            </div>
         </div>
 
         <div class="nav-container">
@@ -603,6 +623,7 @@
                         targetPage.classList.add('active');
                         targetPage.style.opacity = '1';
                         targetPage.style.transform = 'scale(1) translateY(0)';
+                        if(n === 4) startGallerySlideshow(); else stopGallerySlideshow();
                     }, 50);
                 }, 600);
             } else {
@@ -612,6 +633,28 @@
                 targetPage.style.transform = 'scale(1) translateY(0)';
             }
             window.scrollTo(0,0);
+        }
+
+        // --- GALLERY SLIDESHOW LOGIC ---
+        let slideInterval;
+        function startGallerySlideshow() {
+            const slides = document.querySelectorAll('.slide-frame');
+            let current = 0;
+            
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                slides.forEach(s => s.className = 'slide-frame');
+                
+                current = (current + 1) % slides.length;
+                let next = (current + 1) % slides.length;
+                
+                slides[current].classList.add('active');
+                slides[next].classList.add('next');
+            }, 3000);
+        }
+
+        function stopGallerySlideshow() {
+            clearInterval(slideInterval);
         }
 
         function startInvitation() {
