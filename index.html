@@ -458,8 +458,9 @@
     </div>
 
     <script>
-        let hadirCount = 232;
-        let tidakHadirCount = 30;
+        // TOTAL HADIR: 179 | TOTAL TIDAK: 17 
+        let hadirCount = 179;
+        let tidakHadirCount = 17;
         let hasSubmitted = false;
 
         const wishData = [
@@ -473,7 +474,62 @@
             { name: "Hendra Wijaya", status: "Hadir", wish: "Mugi-mugi dadi keluarga sing rukun lan mulyo. Selamat yo!", class: "bg-hadir" },
             { name: "Sari Indah", status: "Tidak Hadir", wish: "Punten pisan, pas hari H lagi ada tugas ke luar kota. Titip doa ya!", class: "bg-tidak" },
             { name: "Guntur Pratama", status: "Hadir", wish: "Siapkan rendang yang banyak ya, saya datang dengan perut kosong! Haha selamat!", class: "bg-hadir" },
-            { name: "Maya Kartika", status: "Hadir", wish: "Alhamdulillah ikut seneng dengernya. Semoga bahagia dunia akhirat ya de. 🥰", class: "bg-hadir" }
+            { name: "Maya Kartika", status: "Hadir", wish: "Alhamdulillah ikut seneng dengernya. Semoga bahagia dunia akhirat ya de. 🥰", class: "bg-hadir" },
+            { name: "Doni Setiawan", status: "Tidak Hadir", wish: "Maaf banget belum bisa hadir karena jadwal bentrok. Sukses acaranya!", class: "bg-tidak" },
+            { name: "Rina Rahmawati", status: "Hadir", wish: "Selamat menempuh hidup baru! Jangan lupa bahagia terus ya kalian berdua. ✨", class: "bg-hadir" },
+            { name: "Eko Prasetyo", status: "Hadir", wish: "Selamat ya Fulan. Semoga cepet dapet momongan biar makin rame!", class: "bg-hadir" },
+            { name: "Indah Permata", status: "Hadir", wish: "Cantik banget pasti Fulani nanti. Selamat ya, sampai ketemu di gedung!", class: "bg-hadir" },
+            { name: "Joko Susilo", status: "Tidak Hadir", wish: "Matur nuwun undangane, tapi kulo nembe wonten keperluan mendesak. Selamat nggih!", class: "bg-tidak" },
+            { name: "Bambang Perkasa", status: "Hadir", wish: "Jos gandos! Semoga langgeng terus sampai kakek nenek.", class: "bg-hadir" },
+            { name: "Ani Wijaya", status: "Hadir", wish: "Selamat ya sayang, doa terbaik buat kalian berdua. Peluk jauh! 🤗", class: "bg-hadir" },
+            { name: "Taufik Hidayat", status: "Hadir", wish: "Hatur nuhun undanganna. Insya Allah dongkap sareng kulawarga. Semangat!", class: "bg-hadir" },
+            { name: "Deni Sumargo", status: "Hadir", wish: "Selamat bro! Akhirnya pelabuhan terakhir ketemu juga. Mantap!", class: "bg-hadir" },
+            { name: "Siska Amelia", status: "Hadir", wish: "Semoga jalinan cintanya makin kuat tiap hari. Happy wedding! 💍", class: "bg-hadir" },
+            { name: "Andi Hermawan", status: "Tidak Hadir", wish: "Waduh maaf sekali lagi ada musibah kecil, jadi gak bisa hadir. Doa saya menyertai.", class: "bg-tidak" },
+            { name: "Mega Utami", status: "Hadir", wish: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khoir. 🤲", class: "bg-hadir" },
+            { name: "Rudi Firmansyah", status: "Hadir", wish: "Awas jangan begadang terus ntar abis nikah ya! Haha selamat bro!", class: "bg-hadir" },
+            { name: "Lilis Karlina", status: "Hadir", wish: "Wilujeng nya neng cantik, mugia janten kulawarga anu barokah. Amin. ❤️", class: "bg-hadir" },
+            { name: "Agung Pribadi", status: "Hadir", wish: "Semoga menjadi awal perjalanan yang indah. Selamat menempuh hidup baru!", class: "bg-hadir" },
+            { name: "Fitri Handayani", status: "Hadir", wish: "Happy for you both! Akhirnya setelah sekian lama ya... 😍", class: "bg-hadir" },
+            { name: "Yanto Racing", status: "Tidak Hadir", wish: "Maaf lur, motor lagi turun mesin gak bisa gas ke sana. Selamat ya!", class: "bg-tidak" },
+            { name: "Nunu Nugraha", status: "Hadir", wish: "Insya Allah hadir mang! Siapkan panggung hiburannya yang mantap!", class: "bg-hadir" },
+            { name: "Dina Mariana", status: "Hadir", wish: "Selamat menempuh lembaran baru. Semoga penuh cinta dan kebahagiaan.", class: "bg-hadir" },
+            { name: "Herman Suherman", status: "Hadir", wish: "Selamat ya bosku, semoga lancar jaya acaranya tanpa hambatan apapun.", class: "bg-hadir" },
+            { name: "Ratih Purwasih", status: "Tidak Hadir", wish: "Mohon maaf tidak bisa hadir, sukses buat acaranya ya cantik.", class: "bg-tidak" },
+            { name: "Zaki Mubarok", status: "Hadir", wish: "Selamat ya Fulan. Semoga istiqomah dalam membangun rumah tangga.", class: "bg-hadir" },
+            { name: "Ujang Galon", status: "Hadir", wish: "Mantap pisan! Moga cepet dapet dede bayi ya mang. Hajar terus! 😂", class: "bg-hadir" },
+            { name: "Sari Hartati", status: "Hadir", wish: "Terharu liat kalian akhirnya nikah. Selamat ya, langgeng terus!", class: "bg-hadir" },
+            { name: "Pepen Effendi", status: "Hadir", wish: "Hadir mang! Rek menta oleh-oleh ti Islamabad nya hhehe.", class: "bg-hadir" },
+            { name: "Kiki Saputri", status: "Hadir", wish: "Barakallah. Semoga sakinah terus sampai maut memisahkan. Amin.", class: "bg-hadir" },
+            { name: "Maman Suherman", status: "Tidak Hadir", wish: "Aduh hampura pisan, nuju aya damelan di luar kota. Selamat nya!", class: "bg-tidak" },
+            { name: "Siti Badriah", status: "Hadir", wish: "Selamat ya neng, semoga suaminya sabar ngadepin kamu hehe. Kidding!", class: "bg-hadir" },
+            { name: "Yusuf Arif", status: "Hadir", wish: "Semoga berkah segalanya, rezekinya lancar setelah menikah. Amin.", class: "bg-hadir" },
+            { name: "Wawan Setiawan", status: "Hadir", wish: "Siapp hadir! Omat nya rendangna tong nepi beak ku saya haha.", class: "bg-hadir" },
+            { name: "Ratna Sari", status: "Hadir", wish: "Selamat ya, semoga rumah tangganya adem ayem terus kayak ubin masjid.", class: "bg-hadir" },
+            { name: "Reza Perkasa", status: "Hadir", wish: "Semangat menempuh hidup baru! Tetap tenang dan kuasai keadaan.", class: "bg-hadir" },
+            { name: "Euis Komariah", status: "Tidak Hadir", wish: "Hampura neng, abdi nuju kirang sehat. Doa ti tebih wae nya.", class: "bg-tidak" },
+            { name: "Dede Yusuf", status: "Hadir", wish: "Wilujeng! Mugia janten pasangan anu silih asah, silih asih, silih asuh.", class: "bg-hadir" },
+            { name: "Irwan Saputra", status: "Hadir", wish: "Lancar terus sampai hari H ya kawan. Siap meramaikan!", class: "bg-hadir" },
+            { name: "Linda Wahyuni", status: "Hadir", wish: "Selamat ya jeng, moga cepet nyusul punya momongan lucu-lucu.", class: "bg-hadir" },
+            { name: "Toto Hartoto", status: "Tidak Hadir", wish: "Maaf absen dulu, lagi jaga warung gak ada yang gantiin. Selamat!", class: "bg-tidak" },
+            { name: "Nana Mulyana", status: "Hadir", wish: "Hadir dong! Gak sabar liat pengantinnya yang rupawan ini.", class: "bg-hadir" },
+            { name: "Yayat Ruhiyat", status: "Hadir", wish: "Alhamdulillah, mugia runtut raut sauyunan salawasna. Amin YRA.", class: "bg-hadir" },
+            { name: "Cucu Cahyati", status: "Hadir", wish: "Selamat neng geulis! Moga dapet imam yang sholeh selamanya.", class: "bg-hadir" },
+            { name: "Dodi Mulyadi", status: "Hadir", wish: "Mantap! Semoga berkah dan langgeng terus ya bro.", class: "bg-hadir" },
+            { name: "Titiek Puspa", status: "Hadir", wish: "Selamat ya cu, moga bahagia terus lahir dan batin. Muach!", class: "bg-hadir" },
+            { name: "Idris Pangestu", status: "Tidak Hadir", wish: "Maaf gak bisa dateng, lagi sibuk ngelawak di tempat lain. Piss!", class: "bg-tidak" },
+            { name: "Wandi Suwandi", status: "Hadir", wish: "Gaskeun mang! Semoga malam pertamanya gak grogi haha.", class: "bg-hadir" },
+            { name: "Siti Maesaroh", status: "Hadir", wish: "Masya Allah tabarakallah, ikut seneng liatnya. Selamat ya!", class: "bg-hadir" },
+            { name: "Dadang Muhamad", status: "Hadir", wish: "Hadir mang! Rek menta soto ah engke pas di ditu. Sip!", class: "bg-hadir" },
+            { name: "Neng Elis", status: "Hadir", wish: "Selamat nya neng, sing langgeng dugi ka paketrok iteuk. 🥰", class: "bg-hadir" },
+            { name: "Umar Bakri", status: "Tidak Hadir", wish: "Maaf nak, bapak lagi ada rapat guru. Doa bapak selalu ada.", class: "bg-tidak" },
+            { name: "Iwan Gunawan", status: "Hadir", wish: "Selamat menempuh hidup baru di bawah matahari yang sama. Damai!", class: "bg-hadir" },
+            { name: "Mpok Siti", status: "Hadir", wish: "Buset dah cakep amat pengantinnya! Selamat ya tong, moga awet!", class: "bg-hadir" },
+            { name: "Jajang Resmawan", status: "Hadir", wish: "Lancar jaya acarana mang. Insya Allah dongkap abdi mah.", class: "bg-hadir" },
+            { name: "Butet Kartaredjasa", status: "Tidak Hadir", wish: "Maaf ya lur, lagi ada pameran seni di Jogja. Sukses acaranya!", class: "bg-tidak" },
+            { name: "Soleh Solihun", status: "Hadir", wish: "Selamat nikah! Jangan lupa dokumentasi yang bagus biar gak nyesel.", class: "bg-hadir" },
+            { name: "Anang Dermawan", status: "Hadir", wish: "Siap hadir pengamanan lokasi! Haha selamat ya bro.", class: "bg-hadir" },
+            { name: "Cecep Fahkruzi", status: "Hadir", wish: "Selamat menempuh hidup baru. Sing rukun terus nya mang.", class: "bg-hadir" }
         ];
 
         function loadInitialWishes() {
